@@ -1,0 +1,151 @@
+body{
+	margin:0;
+	padding:0;
+	font-family: 'Lato', sans-serif;
+	font-size:16px;
+	background:#fff;
+	color:#333;
+}
+
+.page_width{
+	width:90%;
+	max-width:650px;
+	margin:0 auto;
+}
+
+/* HEADER */
+
+header#page_top{
+	padding:30px 0;
+}
+
+header#page_top.full{
+	padding:30px 0 70px;
+}
+
+header#page_top h1{
+	margin:0;
+	padding:0;
+	text-align:center;
+	font-size:1.9rem;
+	font-weight:700;
+}
+
+header#page_top p{
+	text-align:center;
+	color:#999;
+	font-size:1.2rem;
+	font-weight:400;
+	line-height:1.25;
+	margin:12px 0 0 0;
+	padding:0;
+}
+
+header#page_top p a,
+header#page_top p a:visited{
+	color:#999;
+}
+
+header#page_top p span{
+	font-size:0.7em;
+	margin:0 2px;
+	display:inline-block;
+}
+
+header#page_top section#navigation{
+	display:flex;
+	justify-content:space-between;
+	margin-bottom:30px;
+}
+
+header#page_top.full section#navigation{
+	margin-bottom:50px;
+}
+
+header#page_top section#navigation a{
+	display:inline-block;
+	color:#999;
+	margin-right:12px;
+	text-decoration:none;
+}
+
+header#page_top section#navigation a:last-child{
+	margin-right:0;
+}
+
+header#page_top section#navigation a:hover{
+	color:#3399FF;
+}
+
+/* CONTENT */
+section#content{
+
+}
+
+	/* posts list */
+	section#content section.posts h2.year{
+		margin:0;
+		padding:0 0 12px 0;
+		border-bottom:1px solid #ccc;
+		color:#3399FF;
+		font-size:1.5em;
+	}
+
+	section#content section.posts{
+		
+	}
+
+	section#content section.posts article.post{
+		padding:16px 0;
+		cursor:pointer;
+		border-bottom:1px solid #ccc;
+		transition:0.2s;
+	}
+
+	section#content section.posts article.post:hover{
+		background:#ececec;
+		padding:16px 10px;
+		transition:0.2s;
+	}
+
+	section#content section.posts article.post:after{
+		content:'';
+		display:table;
+		clear:both;
+	}
+
+	section#content section.posts article.post span.date{
+		float:right;
+	}
+
+	/* single posts */
+	section#content article.post{
+
+	}
+
+	section#content article.post h2{
+		text-align:center;
+		font-size:2.3rem;
+		margin:0 0 50px 0;
+	}
+
+	section#content article.post p.date{
+		text-align:center;
+		margin:0 0 30px 0;
+		color:#999;
+		font-size:1.1rem;
+	}
+
+	section#content article.post div.post_content{
+		line-height:1.5;
+		font-size:1.2rem;
+	}
+
+	
+
+/* FOOTER */
+footer#page_bottom{
+	padding:40px 0px;
+	text-align:center;
+	color:#999;
+}
