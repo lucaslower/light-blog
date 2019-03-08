@@ -20,6 +20,21 @@ class LightBlog{
 		return $this->sql->selectOne("settings", array("setting_name" => $name))['setting_value'];
 	}
 
+	/////////////////
+	// ERROR PAGES //
+	/////////////////
+
+	public function error_404(){
+		$pass = array(
+			'meta' => array(
+				"page_name" => '404',
+				"page_slug" => "404"
+			),
+			'view' => '404.php'
+		);
+		return $pass;
+	}
+
 	///////////
 	// POSTS //
 	///////////
@@ -62,4 +77,6 @@ class LightBlog{
 			return $pass;
 		}
 	}
+
+
 }

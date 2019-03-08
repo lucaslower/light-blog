@@ -28,7 +28,8 @@ switch($route[0]){
 	
 	// default handles all other page requests
 	default:
-		
+		// for now we just serve a 404
+		$VIEW_DATA = $app->error_404();
 		break;
 
 }

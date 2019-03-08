@@ -1,16 +1,29 @@
 body{
 	margin:0;
 	padding:0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'IBM Plex Sans', sans-serif;
 	font-size:16px;
 	background:#fff;
-	color:#333;
+	color:#353535;
 }
 
 .page_width{
 	width:90%;
 	max-width:650px;
 	margin:0 auto;
+}
+
+a, a:visited{
+	color:#3e3e3e;
+	text-decoration:none;
+	display:inline-block;
+	border-bottom:1px dotted #3e3e3e;
+	padding-bottom:4px;
+}
+
+a:hover{
+	color:#0e0e0e;
+	border-bottom:1px solid #0e0e0e;
 }
 
 /* HEADER */
@@ -27,23 +40,19 @@ header#page_top h1{
 	margin:0;
 	padding:0;
 	text-align:center;
-	font-size:1.9rem;
-	font-weight:700;
+	font-size:4rem;
+	font-weight:600;
+	color:#0e0e0e;
 }
 
 header#page_top p{
 	text-align:center;
-	color:#999;
-	font-size:1.2rem;
-	font-weight:400;
-	line-height:1.25;
+	color:#3e3e3e;
+	font-size:1.4rem;
+	font-weight:300;
+	line-height:1.5;
 	margin:12px 0 0 0;
 	padding:0;
-}
-
-header#page_top p a,
-header#page_top p a:visited{
-	color:#999;
 }
 
 header#page_top p span{
@@ -62,11 +71,20 @@ header#page_top.full section#navigation{
 	margin-bottom:50px;
 }
 
+header#page_top section#navigation nav{
+	border-bottom:1px dotted #999;
+}
+
 header#page_top section#navigation a{
 	display:inline-block;
-	color:#999;
-	margin-right:12px;
+	color:#3e3e3e;
+	padding:0 12px 12px 12px;
 	text-decoration:none;
+	font-weight:300;
+	font-size:1.2rem;
+	border-bottom:1px solid transparent;
+	position:relative;
+	top:1px;
 }
 
 header#page_top section#navigation a:last-child{
@@ -75,6 +93,7 @@ header#page_top section#navigation a:last-child{
 
 header#page_top section#navigation a:hover{
 	color:#3399FF;
+	border-bottom:1px solid #3399FF;
 }
 
 /* CONTENT */
@@ -88,7 +107,8 @@ section#content{
 		padding:0 0 12px 0;
 		border-bottom:1px solid #ccc;
 		color:#3399FF;
-		font-size:1.5em;
+		font-size:1.8em;
+		font-weight:400;
 	}
 
 	section#content section.posts{
@@ -125,15 +145,16 @@ section#content{
 
 	section#content article.post h2{
 		text-align:center;
-		font-size:2.3rem;
+		font-size:3rem;
 		margin:0 0 50px 0;
+		color:#0e0e0e;
 	}
 
 	section#content article.post p.date{
 		text-align:center;
 		margin:0 0 30px 0;
-		color:#999;
-		font-size:1.1rem;
+		color:#3e3e3e;
+		font-size:1.2rem;
 	}
 
 	section#content article.post div.post_content{
@@ -141,7 +162,19 @@ section#content{
 		font-size:1.2rem;
 	}
 
-	
+	/* error pages */
+	section#content article.error h1{
+		text-align:center;
+		font-size:5rem;
+		margin:0;
+		padding:0;
+	}
+
+	section#content article.error p{
+		text-align:center;
+		color:#3e3e3e;
+		font-size:1.5rem;
+	}
 
 /* FOOTER */
 footer#page_bottom{
