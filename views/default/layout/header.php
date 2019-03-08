@@ -6,7 +6,17 @@ $header_class = $full_header ? 'full' : '';
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo $VIEW_DATA['meta']['page_name'] . ' - ' . $app->get_setting('site.title'); ?></title>
+		<title>
+			<?php 
+			$page_title = $VIEW_DATA['meta']['page_name'];
+			if($page_title == ''){
+				echo $app->get_setting('site.title'); 
+			}
+			else{
+				echo $VIEW_DATA['meta']['page_name'] . ' - ' . $app->get_setting('site.title'); 
+			}
+			?>
+		</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Comp Sci major and Web Dev at EIU" />
 		<meta name="author" content="Lucas Lower">
@@ -33,5 +43,8 @@ $header_class = $full_header ? 'full' : '';
 			<?php if($full_header){ ?>
 			<h1><?php echo $app->get_setting('site.title'); ?></h1>
 			<p><?php echo $app->get_setting('site.bio'); ?></p>
+
+			<!-- fancy text effect thing -->
+			<p>I &nbsp;<i style="color:#D84343;font-size:0.85em;" class="far fa-heart"></i>&nbsp; <span id="type_changer"></span></p>
 			<?php } ?>
 		</header>

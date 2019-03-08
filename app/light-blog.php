@@ -66,8 +66,8 @@ class LightBlog{
 			// build return
 			$pass = array(
 				'meta' => array(
-					"page_name" => "Posts",
-					"page_slug" => "posts"
+					"page_name" => "",
+					"page_slug" => "home"
 				),
 				'view' => 'posts.php',
 				'data' => array(

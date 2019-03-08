@@ -37,7 +37,7 @@ header#page_top.full{
 }
 
 header#page_top h1{
-	margin:0;
+	margin:0 0 16px 0;
 	padding:0;
 	text-align:center;
 	font-size:4rem;
@@ -51,14 +51,8 @@ header#page_top p{
 	font-size:1.4rem;
 	font-weight:300;
 	line-height:1.5;
-	margin:12px 0 0 0;
+	margin:0 0 4px 0;
 	padding:0;
-}
-
-header#page_top p span{
-	font-size:0.7em;
-	margin:0 2px;
-	display:inline-block;
 }
 
 header#page_top section#navigation{
@@ -71,10 +65,6 @@ header#page_top.full section#navigation{
 	margin-bottom:50px;
 }
 
-header#page_top section#navigation nav{
-	border-bottom:1px dotted #999;
-}
-
 header#page_top section#navigation a{
 	display:inline-block;
 	color:#3e3e3e;
@@ -82,9 +72,7 @@ header#page_top section#navigation a{
 	text-decoration:none;
 	font-weight:300;
 	font-size:1.2rem;
-	border-bottom:1px solid transparent;
-	position:relative;
-	top:1px;
+	border-bottom:none;
 }
 
 header#page_top section#navigation a:last-child{
@@ -93,7 +81,6 @@ header#page_top section#navigation a:last-child{
 
 header#page_top section#navigation a:hover{
 	color:#3399FF;
-	border-bottom:1px solid #3399FF;
 }
 
 /* CONTENT */
@@ -181,4 +168,15 @@ footer#page_bottom{
 	padding:40px 0px;
 	text-align:center;
 	color:#999;
+}
+
+footer#page_bottom a{
+	color:#999;
+	border-bottom:none;
+	padding:0;
+	text-decoration:underline;
+}
+
+footer#page_bottom a:hover{
+	border-bottom:none;
 }
