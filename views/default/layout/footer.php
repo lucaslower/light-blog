@@ -7,7 +7,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script type="text/javascript">
 			var options = {
-			strings: ["web development.", "EIU.", "traveling.", "Texas.", "life.", "fountain pens.", "PHP... ^500 7."],
+			strings: ["Rhea.", "the ocean.", "traveling.", "Costa Rica.", "writing."],
 			typeSpeed: 100,
 			backSpeed: 40,
 			backDelay: 4000,
@@ -17,5 +17,6 @@
 
 			var typed = new Typed("#type_changer", options);
 		</script>
+		</div>
 	</body>
 </html>

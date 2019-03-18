@@ -2,4 +2,5 @@ Options +FollowSymLinks
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/views/css.php$
 RewriteCond %{REQUEST_URI} !^/views/default/assets/favicon.png$
+RewriteCond %{REQUEST_URI} !^/views/default/assets/back.jpg$
 RewriteRule ^(.*)$ index.php [NC,L]
