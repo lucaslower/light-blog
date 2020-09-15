@@ -14,7 +14,7 @@ $posts = $VIEW_DATA['data']['posts'];
 	<?php
 	$prev_year = '';
 	foreach($posts->toArray() as $post){
-		$timestamp = strtotime($post['post_timestamp']);
+		$timestamp = strtotime($post['post_submitted']);
 		$cur_year = date('Y', $timestamp);
 		if($cur_year != $prev_year){
 			echo '<h2 class="year">'.$cur_year.'</h2>';

@@ -7,8 +7,8 @@ ini_set('error_log', 'errors.log');
 
 // dependencies
 require __DIR__ . "/vendor/autoload.php";
-require __DIR__ . "/sequel.php";
-require "light-blog.php";
+require __DIR__ . "/Sequel.php";
+require "LightBlog.php";
 
 // initialize .env helper
 $dotenv = Dotenv\Dotenv::create(__DIR__);

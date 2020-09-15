@@ -11,7 +11,7 @@ $post = $VIEW_DATA['data']['post'];
 <section id="content" class="page_width">
 
 <article class="post">
-<p class="date"><?php echo date('l, F d, Y', strtotime($post['post_timestamp'])); ?></p>
+<p class="date"><?php echo date('l, F d, Y', strtotime($post['post_submitted'])); ?></p>
 <h2><?php echo $post['post_title']; ?></h2>
 <div class="post_content">
 <?php echo $post['post_content']; ?>
