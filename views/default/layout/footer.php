@@ -7,7 +7,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script type="text/javascript">
 			var options = {
-			strings: ["web development.", "EIU.", "traveling.", "fountain pens.", "Texas.", "PHP... ^500 7.", "road trips."],
+			strings: ["web development.", "EIU.", "traveling.", "fountain pens.", "Colorado.", "PHP... ^500 >7.", "road trips."],
 			typeSpeed: 100,
 			backSpeed: 40,
 			backDelay: 4000,

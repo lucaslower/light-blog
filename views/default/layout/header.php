@@ -31,9 +31,9 @@ $header_class = $full_header ? 'full' : '';
 		<header id="page_top" class="page_width <?php echo $header_class; ?>">
 			<section id="navigation">
 				<nav>
-					<a href="https://lucaslower.com">Home</a>
-					<a href="https://lucaslower.com/about">About</a>
-					<a href="https://lucaslower.com/projects">Projects</a>
+					<a href="https://<?php echo $app->get_setting('site.url'); ?>">Home</a>
+					<a href="https://<?php echo $app->get_setting('site.url'); ?>/about">About</a>
+					<a href="https://<?php echo $app->get_setting('site.url'); ?>/projects">Projects</a>
 				</nav>
 				<nav>
 					<a href="https://github.com/lucaslower"><i class="fab fa-github"></i></a>
