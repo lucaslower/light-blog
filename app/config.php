@@ -16,3 +16,8 @@ $dotenv->load();
 
 // initialize controller
 $app = new LightBlog();
+
+session_name('light-blog-lml');
+ini_set("session.gc_maxlifetime", "3600");
+ini_set("session.cookie_secure", "ON");
+session_start();

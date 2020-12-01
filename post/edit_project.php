@@ -9,6 +9,8 @@ $app->sql->update(
 	array(
 		"project_title" => $_POST['project_title'],
 		"project_content" => $_POST['project_content'],
+		"project_blurb" => $_POST['project_blurb'],
+        "project_year" => $_POST['project_year'],
 		"project_slug" => $app->slugify->slugify($_POST['project_title'])
 	),
 	array(

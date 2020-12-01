@@ -16,13 +16,17 @@ class LightBlog{
 		$this->slugify = new Slugify();
 	}
 
-	//////////////
-	// SETTINGS //
-	//////////////
+	////////////////////////
+	// SETTINGS / HELPERS //
+	////////////////////////
 
 	public function get_setting($name){
 		return $this->sql->selectOne("settings", array("setting_name" => $name))['setting_value'];
 	}
+
+	public function is_active_page($view_schtuff, $page_slug_leader){
+	    return substr($view_schtuff['meta']['page_slug'], 0, strlen($page_slug_leader)) === $page_slug_leader;
+    }
 
 	/////////////////
 	// ERROR PAGES //
@@ -80,15 +84,59 @@ class LightBlog{
 		}
 	}
 
+	//////////////
+    // PROJECTS //
+    //////////////
+
+    public function projects($slug){
+
+        // if a slug was passed
+        if(!is_null($slug)){
+            $project = $this->sql->selectOne("projects", array("project_slug" => $slug));
+            $pass = array(
+                'meta' => array(
+                    "page_name" => $project['project_title'],
+                    "page_slug" => "projects"
+                ),
+                'view' => 'proj-single.php',
+                'data' => array(
+                    "project" => $project
+                )
+            );
+            return $pass;
+        }
+
+        // if a slug was not passed
+        else{
+            // get projects
+            $projects = $this->sql->query("SELECT * FROM projects ORDER BY project_year desc, project_submitted asc");
+            // build return
+            $pass = array(
+                'meta' => array(
+                    "page_name" => "",
+                    "page_slug" => "projects"
+                ),
+                'view' => 'projects.php',
+                'data' => array(
+                    "projects" => $projects
+                )
+            );
+            return $pass;
+        }
+    }
 
 	////////////////////
 	// ADMIN SECTIONS //
 	////////////////////
 
 	public function admin($route){
+        if(!isset($_SESSION[$this->get_setting('site.unique-key')."_username"]) && !in_array($route[1], array('login', 'register'))){
+            return $this->admin(array('admin', 'login'));
+        }
+
 		switch($route[1]){
 
-			// LOGIN
+			// LOGIN/REGISTER/LOGOUT
 			case 'login':
 
 				// check if already logged in
@@ -107,6 +155,29 @@ class LightBlog{
 					);
 				}
 				break;
+            case 'register':
+
+                // check if already logged in
+                if($_SESSION[$this->get_setting('site.unique-key')."_username"] != ''){
+                    return $this->admin(array('admin', 'posts'));
+                }
+
+                // not logged in, serve register page
+                else{
+                    return array(
+                        'meta' => array(
+                            "page_name" => 'Register',
+                            "page_slug" => 'register'
+                        ),
+                        'view' => 'register.php'
+                    );
+                }
+                break;
+            case 'logout':
+                unset($_SESSION[$this->get_setting('site.unique-key')."_username"]);
+                session_destroy();
+                return $this->admin(array('admin','login'));
+                break;
 
 			// POST LIST (default)
 			case '':

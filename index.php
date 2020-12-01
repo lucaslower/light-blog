@@ -26,6 +26,11 @@ switch($route[0]){
 		$VIEW_DATA = $app->posts($route[1]);
 		break;
 
+    // projects
+    case 'projects':
+        $VIEW_DATA = $app->projects($route[1]);
+        break;
+
 	// admin pages
 	case 'admin':
 		// check for admin access

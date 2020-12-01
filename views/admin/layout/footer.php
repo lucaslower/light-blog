@@ -17,11 +17,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
 <script type="text/javascript">
     tinymce.init({
-        selector:'textarea',
+        selector:'textarea.tiny',
         min_height:400,
-        plugins: ['autoresize', 'lists'],
+        plugins: ['autoresize', 'lists', 'image', 'link'],
         autoresize_bottom_margin:20,
-        toolbar: 'undo redo | styleselect | bold italic | bullist | link image'
+        toolbar: 'undo redo | styleselect | bold italic | bullist | link image',
+        image_dimensions: false
     });
     $(document).ready(function(){
         $('#tags').select2({

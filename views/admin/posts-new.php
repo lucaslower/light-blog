@@ -6,7 +6,7 @@ include __DIR__ . "/layout/header.php";
     <!-- Begin page content -->
     <main role="main" class="container pb-5">
         <h1 class="mt-5 mb-3">
-            Create a Post
+            <?php echo $VIEW_DATA['meta']['page_name']; ?>
         </h1>
 
         <!-- new post form -->
@@ -36,7 +36,7 @@ include __DIR__ . "/layout/header.php";
 
             <!-- POST CONTENT -->
             <div class="form-group">
-                <textarea class="form-control" name="post_content" id="post_content" rows="10"></textarea>
+                <textarea class="form-control tiny" name="post_content" id="post_content" rows="10"></textarea>
             </div>
 
             <div class="form-group text-right">

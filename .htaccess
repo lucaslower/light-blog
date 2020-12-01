@@ -1,6 +1,7 @@
 Options +FollowSymLinks
 RewriteEngine On
-RewriteCond %{REQUEST_URI} !^/views/css.php$
-RewriteCond %{REQUEST_URI} !^/views/default/assets/favicon.png$
-RewriteCond %{REQUEST_URI} !^/views/default/assets/back.jpg$
+RewriteCond %{REQUEST_URI} !^/views/[A-z]+/assets/.+$
+RewriteCond %{REQUEST_URI} !^/post/.+\.php$
+RewriteCond %{REQUEST_URI} !^/app/ajax.php$
+RewriteCond %{REQUEST_URI} !^/imgstore/.+$
 RewriteRule ^(.*)$ index.php [NC,L]

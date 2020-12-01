@@ -29,17 +29,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?php if(strpos($VIEW_DATA['meta']['page_slug'],'posts') <= 0) echo 'active'; ?> mr-2">
+                    <li class="nav-item <?php if($app->is_active_page($VIEW_DATA, 'posts')) echo 'active'; ?> mr-2">
                         <a class="nav-link" href="https://<?php echo $app->get_setting('site.url'); ?>/admin/posts">Posts</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pages</a>
+                    <li class="nav-item <?php if($app->is_active_page($VIEW_DATA, 'projects')) echo 'active'; ?> mr-2">
+                        <a class="nav-link" href="https://<?php echo $app->get_setting('site.url'); ?>/admin/projects">Projects</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="nav-item mr-2">
+                        <a class="nav-link" target="_blank" href="https://<?php echo $app->get_setting('site.url'); ?>">View Site <i class="fa fa-external-link-alt ml-2"></i></a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                            lucaslower
+                            <?php echo $_SESSION[$app->get_setting('site.unique-key')."_username"]; ?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#"><i class="fa fa-user-circle mr-2"></i>Profile</a>

@@ -86,3 +86,9 @@ body > .container {
 .navbar-nav li.show{
     border:1px solid #fff;
 }
+
+a.new_acct_btn{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+}

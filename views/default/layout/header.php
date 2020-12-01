@@ -30,10 +30,10 @@ $header_class = $full_header ? 'full' : '';
 		<div id="page_wrap">
 		<header id="page_top" class="page_width <?php echo $header_class; ?>">
 			<section id="navigation">
-				<nav>
-					<a href="https://<?php echo $app->get_setting('site.url'); ?>">Home</a>
-					<a href="https://<?php echo $app->get_setting('site.url'); ?>/about">About</a>
-					<a href="https://<?php echo $app->get_setting('site.url'); ?>/projects">Projects</a>
+                <nav>
+                    <?php if(!$full_header) echo '<span>'.$app->get_setting('site.title').'</span>'; ?>
+					<a href="https://<?php echo $app->get_setting('site.url'); ?>" class="<?php if($app->is_active_page($VIEW_DATA, 'home')) echo 'active'; ?>">Home</a>
+					<a href="https://<?php echo $app->get_setting('site.url'); ?>/projects" class="<?php if($app->is_active_page($VIEW_DATA, 'projects')) echo 'active'; ?>">Projects</a>
 				</nav>
 				<nav>
 					<a href="https://github.com/lucaslower"><i class="fab fa-github"></i></a>

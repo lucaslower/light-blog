@@ -37,6 +37,15 @@ a, a:visited{
 	padding-bottom:4px;
 }
 
+div.post_content a{
+	color:#3399ff;
+	font-weight:bold;
+}
+
+div.more_proj{
+	text-align:center;
+}
+
 a:hover{
 	color:#0e0e0e;
 	border-bottom:1px solid #0e0e0e;
@@ -81,6 +90,13 @@ header#page_top.full section#navigation{
 	margin-bottom:50px;
 }
 
+header#page_top section#navigation span{
+	font-weight:700;
+	font-size:1.2em;
+	margin-right:15px;
+	display:inline-block;
+}
+
 header#page_top section#navigation a{
 	display:inline-block;
 	color:#3e3e3e;
@@ -89,6 +105,10 @@ header#page_top section#navigation a{
 	font-weight:300;
 	font-size:1.2rem;
 	border-bottom:none;
+}
+
+header#page_top section#navigation a.active{
+	color:#3399FF;
 }
 
 header#page_top section#navigation a:last-child{
@@ -111,12 +131,16 @@ section#content{
 
 	/* posts list */
 	section#content section.posts h2.year{
-		margin:0;
+		margin:30px 0 0 0;
 		padding:0 0 12px 0;
 		border-bottom:1px solid #ccc;
 		color:#3399FF;
 		font-size:1.8em;
 		font-weight:400;
+	}
+
+	section#content section.posts h2.year:first-of-type{
+		margin-top:0px;
 	}
 
 	section#content section.posts{
@@ -151,12 +175,44 @@ section#content{
 
 	}
 
+	section#content.projects article.post{
+		margin-bottom:50px;
+	}
+
 	section#content article.post h2{
 		text-align:center;
 		font-size:3rem;
 		margin:0 0 50px 0;
 		color:#0e0e0e;
 		font-weight:700;
+	}
+
+	section#content article.post h3{
+		display:inline-block;
+		margin:0;
+		color:#0e0e0e;
+		font-weight:700;
+		position:relative;
+		z-index:10;
+	}
+
+	section#content article.post div.title_wrap{
+		position:relative;
+		font-size:2rem;
+		margin:0 0 25px 0;
+	}
+
+	section#content article.post div.title_wrap span.year,
+	section#content a.readmore article.post div.title_wrap span.year{
+		background:#3399FF;
+		color:#fff;
+		padding:3px 9px;
+		font-size:0.8em;
+		display:inline-block;
+		position:absolute;
+		top:0.2rem;
+		left:-6.5rem;
+		border-bottom:none;
 	}
 
 	section#content article.post p.date{
@@ -169,6 +225,65 @@ section#content{
 	section#content article.post div.post_content{
 		line-height:1.5;
 		font-size:1.2rem;
+		z-index:10;
+		position:relative;
+	}
+
+	section#content article.post div.post_content img{
+		max-width:90%;
+		max-height:600px;
+		width:auto;
+		height:auto;
+		display:block;
+		margin:15px auto;
+	}
+
+	section#content a.readmore{
+		border-bottom:none;
+		font-weight:normal;
+	}
+
+	section#content a.readmore article.post{
+		color:#353535;
+		position:relative;
+	}
+
+	section#content a.readmore article.post h3 span{
+		z-index:10;
+		position:relative;
+	}
+
+	section#content a.readmore article.post div.slider_thing{
+		height:calc(100% + 1rem);
+		width:0px;
+		position:absolute;
+		top:-0.5rem;
+		left:-1.6rem;
+		background:#3399FF;
+		z-index:1;
+		transition:width 0.2s;
+	}
+
+	section#content a.readmore article.post:hover div.slider_thing{
+		width:calc(100% + 2.8rem);
+		transition:width 0.2s;
+	}
+
+	section#content a.readmore article.post:hover h3{
+		color:#fff;
+	}
+
+	section#content a.readmore article.post span.more{
+		display:block;
+		text-align:right;
+		padding:10px 0 15px 0px;
+		color:#3e3e3e;
+		border-bottom:1px dotted #3e3e3e;
+	}
+
+	section#content a.readmore article.post:hover span.more{
+		color:#0e0e0e;
+		border-bottom:1px solid #0e0e0e;
 	}
 
 	/* error pages */

@@ -5,7 +5,7 @@ include __DIR__ . "/layout/header.php";
     <!-- Begin page content -->
     <main role="main" class="container">
         <h1 class="mt-5 mb-3">
-            Posts
+            <?php echo $VIEW_DATA['meta']['page_name']; ?>
             <a href="https://<?php echo $app->get_setting('site.url'); ?>/admin/posts/new">
             <button type="button" class="btn btn-outline-primary btn-lg float-right">
                 <i class="fa fa-plus mr-2"></i>

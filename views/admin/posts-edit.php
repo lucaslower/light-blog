@@ -7,7 +7,7 @@ $post = $VIEW_DATA['data'];
     <!-- Begin page content -->
     <main role="main" class="container pb-5">
         <h1 class="mt-5 mb-3">
-            Edit Post
+            <?php echo $VIEW_DATA['meta']['page_name']; ?>
             <a href="https://<?php echo $app->get_setting('site.url'); ?>/admin/new">
                 <button type="button" class="btn btn-outline-danger btn-lg float-right">
                     <i class="fa fa-trash mr-1"></i>
@@ -27,7 +27,7 @@ $post = $VIEW_DATA['data'];
                     <div class="input-group-prepend">
                         <span class="input-group-text">Title</span>
                     </div>
-                    <input type="text" class="form-control" name="post_title" id="post_title" placeholder="Enter post title" value="<?php echo $post['post_title']; ?>">
+                    <input type="text" class="form-control" name="post_title" id="post_title" placeholder="Enter post title" value="<?php echo addslashes($post['post_title']); ?>">
                 </div>
             </div>
 
@@ -50,7 +50,7 @@ $post = $VIEW_DATA['data'];
 
             <!-- POST CONTENT -->
             <div class="form-group">
-                <textarea class="form-control" name="post_content" id="post_content" rows="10"><?php echo $post['post_content']; ?></textarea>
+                <textarea class="form-control tiny" name="post_content" id="post_content" rows="10"><?php echo $post['post_content']; ?></textarea>
             </div>
 
             <div class="form-group text-right">
